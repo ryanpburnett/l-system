@@ -29,21 +29,27 @@
 
 // TRY #3
 
-let lsys = ['b'];
+let lsys = ['a'];
 
-const iterator = () => {
-    let currentLength = lsys.length
-    for(i = 0; i < currentLength; i++) {
-        // a => ab
-        if(lsys[i] === 'a') {
-            lsys.splice(lsys[i], 1, 'a','b')
-        // b => aa
-        }else if(lsys[i] === 'b') {
-            lsys.splice(lsys[i], 1, 'a', 'a')
+const iterator = (iterations) => {
+
+    for (i = 0; i < iterations; i++) {
+
+        const singleIteration = () => {
+            let currentLength = lsys.length
+            for(j = 0; j < currentLength; j++) {
+                // a => ab
+                if(lsys[j] === 'a') {
+                    lsys.splice(lsys[j], 1, 'a','b')
+                // b => aa
+                }else if(lsys[j] === 'b') {
+                    lsys.splice(lsys[j], 1, 'a', 'a')
+                }
+            }
         }
+        console.log(lsys)
+        singleIteration()
     }
 }
 
-iterator()
-
-console.log(lsys)
+iterator(5)
