@@ -40,10 +40,10 @@ const iterator = (iterations) => {
             for(j = 0; j < currentLength; j++) {
                 // a => ab
                 if(lsys[j] === 'a') {
-                    lsys.splice(lsys[j], 1, 'a','b')
+                    lsys.splice(j, 1, 'a', 'b')
                 // b => aa
                 }else if(lsys[j] === 'b') {
-                    lsys.splice(lsys[j], 1, 'a', 'a')
+                    lsys.splice(j, 1, 'a', 'a')
                 }
             }
         }
